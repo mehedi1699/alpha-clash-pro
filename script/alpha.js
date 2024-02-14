@@ -9,6 +9,31 @@
 //     // show the play ground
 
 // }
+function handleKeybordButtonPress(event){
+    const playerPressed = event.key;
+    console.log('player pressed:',playerPressed);
+    
+    // get the expected press
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    // console.log(currentAlphabetElement.innerText);
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const currentAlphabetLower= currentAlphabet.toLocaleLowerCase();
+    console.log(playerPressed,currentAlphabetLower);
+
+    // checked match or not 
+    if(playerPressed === currentAlphabetLower){
+        removeBgColorById(currentAlphabetLower);
+        continueGame();
+    }
+    else{
+        console.log('wrong press');
+    }
+
+}
+// capture keybord key press
+document.addEventListener('keyup', handleKeybordButtonPress);
+
+
 
 function continueGame(){
     // step: random generate 
