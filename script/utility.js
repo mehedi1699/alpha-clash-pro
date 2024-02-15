@@ -29,3 +29,13 @@ function getRandomAlphabet(){
     const alphabet = alphabets[indexNumber];
     return alphabet;
 }
+function setElementValueById(elementId,value){
+    const element = document.getElementById(elementId);
+    element.innerText= value;
+}
+
+function getTextElementById(elementid){
+    const element= document.getElementById(elementid);
+    const text = element.innerText;
+    return text;
+}
